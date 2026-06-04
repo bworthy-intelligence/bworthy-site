@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | B.Worthy Intelligence</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A1A1A'/%3E%3Crect x='6' y='10' width='8' height='3' rx='1.5' fill='%23B87333' opacity='0.3'/%3E%3Crect x='6' y='15' width='14' height='3' rx='1.5' fill='%23B87333' opacity='0.65'/%3E%3Crect x='6' y='20' width='20' height='3' rx='1.5' fill='%23B87333'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;700&family=DM+Sans:wght@300;400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --charcoal:      #1A1A1A;
+      --copper:        #B87333;
+      --copper-hover:  #C9853D;
+      --copper-border: rgba(184, 115, 51, 0.18);
+      --off-white:     #F7F5F2;
+      --warm-stone:    #EEEAE4;
+      --white:         #ffffff;
+      --text-body:     rgba(247, 245, 242, 0.72);
+      --text-muted:    rgba(247, 245, 242, 0.4);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--charcoal);
+      color: var(--off-white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: padding 0.4s ease, background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    nav.scrolled {
+      padding: 18px 48px;
+      background: rgba(26, 26, 26, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom-color: rgba(184, 115, 51, 0.08);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-strata {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5px;
+      align-items: flex-end;
+    }
+
+    .nav-strata-bar {
+      height: 3px;
+      border-radius: 1.5px;
+      background: var(--copper);
+    }
+
+    .nav-strata-bar:nth-child(1) { width: 7px;  opacity: 0.25; }
+    .nav-strata-bar:nth-child(2) { width: 12px; opacity: 0.5;  }
+    .nav-strata-bar:nth-child(3) { width: 18px; opacity: 0.75; }
+    .nav-strata-bar:nth-child(4) { width: 24px; opacity: 1;    }
+
+    .nav-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--off-white);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--copper); }
+
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--text-muted);
+      transition: background 0.3s ease;
+    }
+
+    .mobile-toggle:hover span { background: var(--copper); }
+
+    .page-header {
+      padding: 160px 48px 80px;
+      border-bottom: 1px solid rgba(184, 115, 51, 0.08);
+    }
+
+    .page-header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 24px;
+    }
+
+    .page-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 40px;
+      font-weight: 200;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+
+    .page-meta {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    .policy-content {
+      padding: 80px 48px 120px;
+    }
+
+    .policy-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .policy-section {
+      margin-bottom: 56px;
+    }
+
+    .policy-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(184, 115, 51, 0.12);
+    }
+
+    .policy-section p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--text-body);
+      margin-bottom: 16px;
+    }
+
+    .policy-section p:last-child { margin-bottom: 0; }
+
+    .policy-section ul {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--text-body);
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    .policy-section ul li { margin-bottom: 8px; }
+
+    .policy-section ul li:last-child { margin-bottom: 0; }
+
+    .policy-section strong {
+      color: var(--off-white);
+      font-weight: 400;
+    }
+
+    .policy-section a {
+      color: var(--copper);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .policy-section a:hover { color: var(--copper-hover); }
+
+    footer {
+      padding: 40px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(184, 115, 51, 0.06);
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-strata {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5px;
+      align-items: flex-end;
+    }
+
+    .footer-strata-bar {
+      height: 2px;
+      border-radius: 1px;
+      background: var(--copper);
+    }
+
+    .footer-strata-bar:nth-child(1) { width: 4px;  opacity: 0.3; }
+    .footer-strata-bar:nth-child(2) { width: 7px;  opacity: 0.6; }
+    .footer-strata-bar:nth-child(3) { width: 10px; opacity: 1;   }
+
+    .footer-text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-right {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: rgba(255,255,255,0.15);
+      font-weight: 300;
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 20px 24px; }
+      nav.scrolled { padding: 14px 24px; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: rgba(26, 26, 26, 0.98);
+        backdrop-filter: blur(12px);
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid rgba(184, 115, 51, 0.08);
+      }
+      .mobile-toggle { display: flex; }
+      .page-header { padding: 120px 24px 60px; }
+      .page-title { font-size: 28px; }
+      .policy-content { padding: 60px 24px 80px; }
+      footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="/" class="nav-logo">
+    <div class="nav-strata">
+      <div class="nav-strata-bar"></div>
+      <div class="nav-strata-bar"></div>
+      <div class="nav-strata-bar"></div>
+      <div class="nav-strata-bar"></div>
+    </div>
+    <span class="nav-name">B.Worthy</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/#what-we-do">What We Do</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="section-label">Legal</div>
+    <h1 class="page-title">Privacy Policy</h1>
+    <div class="page-meta">Version 1.0 &nbsp;&middot;&nbsp; June 2026 &nbsp;&middot;&nbsp; Review Date: June 2027</div>
+  </div>
+</div>
+
+<div class="policy-content">
+  <div class="policy-inner">
+
+    <div class="policy-section">
+      <h2>1. Introduction</h2>
+      <p>B.Worthy Intelligence Pty Ltd (ABN 46 695 838 254) (&ldquo;B.Worthy Intelligence&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) is committed to protecting the privacy of individuals whose personal information we collect and handle in the course of our business activities.</p>
+      <p>This Privacy Policy explains how we collect, use, store, disclose, and protect personal information in accordance with the Privacy Act 1988 (Cth) and the Australian Privacy Principles (APPs).  It applies to all personal information collected by B.Worthy Intelligence in connection with the delivery of our consulting services, our business operations, and our interactions with clients, contractors, suppliers, and other individuals.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>2. What Personal Information We Collect</h2>
+      <p>B.Worthy Intelligence may collect the following types of personal information:</p>
+      <ul>
+        <li><strong>Contact information:</strong> Names, email addresses, telephone numbers, and business addresses of clients, client representatives, contractors, and suppliers</li>
+        <li><strong>Professional information:</strong> Job titles, employer details, and professional background where relevant to an engagement</li>
+        <li><strong>Engagement information:</strong> Information provided by clients or their representatives in the course of a consulting engagement, which may include details about individuals within the client organisation</li>
+        <li><strong>Financial information:</strong> Bank account details and invoicing information for the purposes of payment and financial administration</li>
+        <li><strong>Correspondence:</strong> Emails, messages, and other communications between B.Worthy Intelligence and individuals</li>
+      </ul>
+      <p>We do not collect sensitive information (as defined under the Privacy Act 1988 (Cth)) unless it is directly relevant to an engagement and we have obtained the individual's consent.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>3. How We Collect Personal Information</h2>
+      <p>We collect personal information in the following ways:</p>
+      <ul>
+        <li>Directly from individuals when they contact us, engage our services, or correspond with us</li>
+        <li>From client organisations in the course of delivering consulting services</li>
+        <li>From contractors and suppliers when they provide services to us</li>
+        <li>From publicly available sources such as company websites and professional networking platforms where relevant to business development</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2>4. Why We Collect Personal Information</h2>
+      <p>We collect personal information for the following purposes:</p>
+      <ul>
+        <li>To deliver consulting services to our clients</li>
+        <li>To communicate with clients, contractors, and suppliers in the ordinary course of business</li>
+        <li>To manage our business relationships and contractual obligations</li>
+        <li>To issue and process invoices and payments</li>
+        <li>To comply with our legal and regulatory obligations</li>
+        <li>To respond to enquiries and provide information about our services</li>
+      </ul>
+      <p>We will not use personal information for a purpose other than that for which it was collected without the individual's consent, unless required or permitted by law.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>5. How We Use and Disclose Personal Information</h2>
+      <p>Personal information collected by B.Worthy Intelligence is used and disclosed only as necessary for the purposes set out in Section 4.</p>
+      <p>We may disclose personal information to:</p>
+      <ul>
+        <li>Contractors and service providers engaged by B.Worthy Intelligence who need the information to perform services on our behalf, subject to appropriate confidentiality obligations</li>
+        <li>Professional advisers including lawyers and accountants where required</li>
+        <li>Regulatory authorities and law enforcement agencies where required by law</li>
+        <li>Any other party where the individual has consented to the disclosure</li>
+      </ul>
+      <p>We will not sell, rent, or trade personal information to third parties.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>6. Cross-Border Disclosure</h2>
+      <p>B.Worthy Intelligence is based in Australia and primarily serves clients in Australia and the United States.  Personal information may be disclosed to or accessed by parties located outside Australia, including in the United States, where necessary for the delivery of services.</p>
+      <p>Where personal information is disclosed to overseas recipients, we take reasonable steps to ensure the recipient handles the information in a manner consistent with the Australian Privacy Principles.</p>
+      <p><strong>GDPR:</strong> Where we handle personal information of individuals located in the European Economic Area in our capacity as a data processor on behalf of a client, we comply with the applicable requirements of the EU General Data Protection Regulation (GDPR) as directed by the relevant data controller.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>7. How We Protect Personal Information</h2>
+      <p>B.Worthy Intelligence takes reasonable steps to protect personal information from misuse, interference, loss, and unauthorised access, modification, or disclosure.  Our security measures include:</p>
+      <ul>
+        <li>Encryption of data in transit and at rest</li>
+        <li>Access controls and multi-factor authentication on systems holding personal information</li>
+        <li>Storage of personal information in reputable, secure cloud platforms</li>
+        <li>Confidentiality obligations imposed on contractors and service providers with access to personal information</li>
+        <li>Annual review of security practices in accordance with our Information Security Policy</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2>8. Data Retention</h2>
+      <p>Personal information is retained for as long as necessary to fulfil the purposes for which it was collected, or as required by law or contract.  In general:</p>
+      <ul>
+        <li>Client engagement records, including personal information collected in the course of an engagement, are retained for a minimum of 5 years following the conclusion of the engagement</li>
+        <li>Financial records are retained for a minimum of 7 years in accordance with Australian tax law</li>
+        <li>Personal information that is no longer required is securely deleted or destroyed</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2>9. Notifiable Data Breaches</h2>
+      <p>In the event of a data breach that is likely to result in serious harm to one or more individuals, B.Worthy Intelligence will notify the affected individuals and the Office of the Australian Information Commissioner (OAIC) in accordance with the Notifiable Data Breaches (NDB) scheme under the Privacy Act 1988 (Cth).</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>10. Access and Correction</h2>
+      <p>Individuals have the right to request access to personal information we hold about them and to request correction of any inaccurate, incomplete, or out-of-date information.</p>
+      <p>To make an access or correction request, please contact us using the details in Section 12.  We will respond within a reasonable timeframe and no later than 30 days of receiving a request.</p>
+      <p>We may decline a request for access or correction in circumstances permitted by the Australian Privacy Principles, in which case we will provide written reasons for the decision.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>11. Complaints</h2>
+      <p>If you believe B.Worthy Intelligence has handled your personal information in a manner inconsistent with this Privacy Policy or the Australian Privacy Principles, you may submit a complaint by contacting us using the details in Section 12.</p>
+      <p>We will acknowledge your complaint within 5 business days and aim to resolve it within 30 days.  If you are not satisfied with our response, you may lodge a complaint with the Office of the Australian Information Commissioner (OAIC) at <a href="https://www.oaic.gov.au" target="_blank">www.oaic.gov.au</a>.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>12. Contact Us</h2>
+      <p>For privacy-related enquiries, access or correction requests, or complaints, please contact:</p>
+      <p><strong>Privacy Contact</strong><br>B.Worthy Intelligence Pty Ltd<br>Email: <a href="mailto:info@bworthyintelligence.com">info@bworthyintelligence.com</a></p>
+    </div>
+
+    <div class="policy-section">
+      <h2>13. Policy Review</h2>
+      <p>This Privacy Policy will be reviewed annually or following any material change to our business, data handling practices, or applicable privacy laws.  The current version of this policy is available at <a href="https://www.bworthyintelligence.com/privacy-policy">www.bworthyintelligence.com/privacy-policy</a>.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">
+    <div class="footer-strata">
+      <div class="footer-strata-bar"></div>
+      <div class="footer-strata-bar"></div>
+      <div class="footer-strata-bar"></div>
+    </div>
+    <span class="footer-text">&copy; 2026 B.Worthy Intelligence Pty Ltd. All rights reserved.</span>
+  </div>
+  <span class="footer-right">Clarity through complexity</span>
+</footer>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  const mobileToggle = document.getElementById('mobileToggle');
+  const navLinks = document.getElementById('navLinks');
+  mobileToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>
